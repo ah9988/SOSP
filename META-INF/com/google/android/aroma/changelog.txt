@@ -1,0 +1,7 @@
+﻿<b>SOSP V1</b>
+-Started from Scratch
+-Removed old Content
+-Added AROMA (latest)
+-Added AROMA Filemanager (latest)
+-Added own AROMA Theme with Google Icons
+-Added Prop Patch (cleaned down to the barely minimum)
