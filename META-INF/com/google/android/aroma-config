@@ -1,4 +1,4 @@
-﻿theme("blacknwhite");
+﻿theme("sosp");
 fontresload("0","ttf/android.ttf","12");
 fontresload("1","ttf/android.ttf","12");
 ini_set("dp",                     "6");
@@ -7,8 +7,8 @@ ini_set("transition",             "stack");
 ini_set("rom_name",               "SOSP");
 ini_set("rom_author",             "MIUSTONE");
 ini_set("rom_device",             "QUALCOMM SNAPDRAGON");
-ini_set("rom_version",            "V18.3");
-ini_set("rom_date",               "01.03.18");
+ini_set("rom_version",            "BASED ON ZIP DATE");
+ini_set("rom_date",               "CHECK THE ZIP NAME");
 ini_set("icon_next",              "@next");
 ini_set("icon_back",              "@back");
 ini_set("text_back", 	          "BACK");
@@ -22,17 +22,17 @@ ini_set("text_quit_msg", 		  "DO YOUR REALLY WANT TO LEAVE THE SOSP UTILITY?");
 #
 anisplash(
 3,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1
 );
 #
 gotolabel("MENU");
@@ -465,15 +465,15 @@ endif;
 #
 anisplash(
 1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1
 );
