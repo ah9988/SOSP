@@ -8,7 +8,7 @@ ini_set("rom_name",               "SOSP");
 ini_set("rom_author",             "MIUSTONE");
 ini_set("rom_device",             "QUALCOMM SNAPDRAGON");
 ini_set("rom_version",            "BASED ON ZIP DATE");
-ini_set("rom_date",               "CHECK THE ZIP NAME");
+ini_set("rom_date",               "BASED ON ZIP DATE");
 ini_set("icon_next",              "@next");
 ini_set("icon_back",              "@back");
 ini_set("text_back", 	          "BACK");
@@ -144,6 +144,17 @@ selectbox(
 );
 #
 selectbox(
+"<u>DEVICE</u>",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"device.prop",
+#
+"<u>WHICH DEVICE CONFIG DO YOU WANT TO USE?</u>","",2,
+"<b>PIXEL 2 XL</b>","TRANSFORMS YOUR DEVICE INTO A PIXEL 2 XL",1,
+"<b>SYSTEM DEFAULT</b>","KEEPS YOUR DEVICE ORIGINAL AS POSSIBLE",0
+);
+#
+selectbox(
 "<u>ROOT</u>",
 "MAKE YOUR CHOICE AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
 "@none",
@@ -186,16 +197,16 @@ selectbox(
 "system.prop",
 #
 "<u>SOSP SYSTEM</u>","",2,
-"<b>ENABLED</b>","ADDS OPTIMIZED GAPPS AFTER MASSIVE CLEANING",1,
+"<b>ENABLED</b>","ADDS OPTIMIZED GAPPS AFTER MASSIVE APP CLEANING",1,
 "<b>DISABLED</b>","CUSTOM CLEANING / OPTIONAL GAPPS ON A EXTRA PAGE",0,
 "<u>SOSP KERNEL</u>","",2,
-"<b>ENABLED</b>","ADDS THE HELLSGATE AXON 7 KERNEL",1,
+"<b>ENABLED</b>","ADDS A INITD KERNEL OPTIMIZER SCRIPT",1,
 "<b>DISABLED</b>","NO KERNEL CHANGING / DEFAULT KERNEL",0,
 "<u>SOSP AUDIO</u>","",2,
 "<b>ENABLED</b>","ADDS ADVANCED SOSP AUDIO SYSTEM ADDITIONS",1,
 "<b>DISABLED</b>","NO EXTRA OPTIMIZATION OF THE AUDIO QUALITY",0,
 "<u>SOSP EMOJIS</u>","",2,
-"<b>ENABLED</b>","ADDS EMOJIONE 3.1 EMOJI REPLACEMENT",1,
+"<b>ENABLED</b>","ADDS EMOJIONE 3.2 EMOJI REPLACEMENT",1,
 "<b>DISABLED</b>","USING THE DEFAULT SYSTEM EMOJIS",0,
 "<u>SOSP FONT</u>","",2,
 "<b>ENABLED</b>","ADDS UBUNTU REGULAR AS REPLACEMENT FONT",1,
@@ -295,7 +306,7 @@ selectbox(
 "<b>OFF</b>","NO EXTRA SERVICES WILL BE ADDED",1,
 "<u>SOSP APP COLLECTION</u>","",2,
 "<b>ENABLED</b>","ADDING THE FULL COLLECTION",0,
-"<b>DISABLED</b>","ADDING NO APPS AND SKIPING THIS",0,
+"<b>DISABLED</b>","ADDING NO APPS FROM THE COLLECTION",0,
 "<b>CUSTOM</b>","ALLOWS APP SELECTING ON THE NEXT PAGE",1
 );
 #
