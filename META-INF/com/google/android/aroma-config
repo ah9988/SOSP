@@ -1,38 +1,39 @@
-﻿theme("blacknwhite");
+﻿
+theme("blacknwhite");
 fontresload("0","ttf/android.ttf","12");
 fontresload("1","ttf/android.ttf","12");
-ini_set("dp",                     "6");
-ini_set("transition_frame",       "24");
-ini_set("transition",             "stack");
-ini_set("rom_name",               "SOSP");
-ini_set("rom_author",             "MIUSTONE");
-ini_set("rom_device",             "SNAPDRAGON");
-ini_set("rom_version",            "xx.xx.xx");
-ini_set("rom_date",               "xx.xx.xx");
-ini_set("icon_next",              "@next");
-ini_set("icon_back",              "@back");
-ini_set("text_back", 	          "BACK");
-ini_set("text_next",              "NEXT");
-ini_set("text_no",         		  "NO");
-ini_set("text_ok", 		          "OK");
-ini_set("text_yes", 	          "YES");
-ini_set("text_quit", 		      "EXIT");
-ini_set("text_about", 			  "INFO");
-ini_set("text_quit_msg", 		  "DO YOU REALLY WANT TO LEAVE THE SOSP UTILITY?");
+ini_set("dp","6");
+ini_set("transition_frame","24");
+ini_set("transition","stack");
+ini_set("rom_name","SOSP");
+ini_set("rom_author","MIUSTONE");
+ini_set("rom_device","SNAPDRAGON");
+ini_set("rom_version","xx.xx.xx");
+ini_set("rom_date","xx.xx.xx");
+ini_set("icon_next","@next");
+ini_set("icon_back","@back");
+ini_set("text_back","BACK");
+ini_set("text_next","NEXT");
+ini_set("text_no","NO");
+ini_set("text_ok","OK");
+ini_set("text_yes","YES");
+ini_set("text_quit","EXIT");
+ini_set("text_about","INFO");
+ini_set("text_quit_msg","DO YOU REALLY WANT TO LEAVE THE SOSP UTILITY?");
 #
 anisplash(
 3,
-"themes/sosp/1",1,
-"themes/sosp/2",1,
-"themes/sosp/1",1,
-"themes/sosp/2",1,
-"themes/sosp/1",1,
-"themes/sosp/2",1,
-"themes/sosp/1",1,
-"themes/sosp/2",1,
-"themes/sosp/1",1,
-"themes/sosp/2",1,
-"themes/sosp/1",1
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1
 );
 #
 gotolabel("MENU");
