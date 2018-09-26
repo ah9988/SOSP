@@ -1,4 +1,4 @@
-﻿theme("sosp");
+﻿theme("blacknwhite");
 fontresload("0","ttf/android.ttf","12");
 fontresload("1","ttf/android.ttf","12");
 ini_set("dp",                     "6");
@@ -18,7 +18,7 @@ ini_set("text_ok", 		          "OK");
 ini_set("text_yes", 	          "YES");
 ini_set("text_quit", 		      "EXIT");
 ini_set("text_about", 			  "INFO");
-ini_set("text_quit_msg", 		  "DO YOUR REALLY WANT TO LEAVE THE SOSP UTILITY?");
+ini_set("text_quit_msg", 		  "DO YOU REALLY WANT TO LEAVE THE SOSP UTILITY?");
 #
 anisplash(
 3,

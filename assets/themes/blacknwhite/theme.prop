@@ -62,6 +62,6 @@ config.button_roundsize      = 1
 config.window_roundsize      = 1
 config.transition_frame      = 5
 
-info.themename        = sosp
+info.themename        = blacknwhite
 info.description      = Black And White Theme
 info.author           = Miustone
