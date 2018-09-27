@@ -8,8 +8,13 @@ ini_set("transition","stack");
 ini_set("rom_name","SOSP");
 ini_set("rom_author","MIUSTONE");
 ini_set("rom_device","SNAPDRAGON");
+<<<<<<< HEAD
+ini_set("rom_version","NIGHTLY");
+ini_set("rom_date","XX.XX.XX");
+=======
 ini_set("rom_version","xx.xx.xx");
 ini_set("rom_date","xx.xx.xx");
+>>>>>>> fcd2f8dd6c6898ffa7c96f36373a4976e69d3beb
 ini_set("icon_next","@next");
 ini_set("icon_back","@back");
 ini_set("text_back","BACK");
@@ -19,8 +24,13 @@ ini_set("text_ok","OK");
 ini_set("text_yes","YES");
 ini_set("text_quit","EXIT");
 ini_set("text_about","INFO");
+<<<<<<< HEAD
+ini_set("text_quit_msg","DO YOU REALLY WANT TO LEAVE THE SOSP UTILITY ?");
+###################
+=======
 ini_set("text_quit_msg","DO YOU REALLY WANT TO LEAVE THE SOSP UTILITY?");
 #
+>>>>>>> fcd2f8dd6c6898ffa7c96f36373a4976e69d3beb
 anisplash(
 3,
 "themes/blacknwhite/1",1,
@@ -35,22 +45,22 @@ anisplash(
 "themes/blacknwhite/2",1,
 "themes/blacknwhite/1",1
 );
-#
+###################
 gotolabel("MENU");
-#
+###################
 menubox(
 "<u>WELCOME</u>",
-"SELECT A OPTION TO START OR PRESS THE 3 DOT MENU FOR MORE...",
+"SELECT A OPTION TO START OR PRESS THE 3 DOTS",
 "@none",
 "welcome.prop",
-#
-"<b>SOSP INSTALLER"+ini_get("rom_version")+"</b>","STARTS THE PATCH CONFIGURATION","@welcome",
+###################
+"<b>SOSP INSTALLER</b>","STARTS THE PATCH CONFIGURATION","@welcome",
 "<b>SOSP CHANGELOG</b>","SHOWS THE LATEST CHANGELOG","@info",
-"<b>SOSP HOW ?? TO</b>","SHOWS THE LATEST INSTRUCTIONS","@info",
-"<b>SOSP ANALYZER</b>","SHOWS ACTUAL DEVICE INFORMATIONS","@info",
-"<b>SOSP MANAGER</b>","STARTS A ADVANCED FILE MANAGER","@welcome"
+"<b>SOSP INSTRUCTIONS</b>","SHOWS THE LATEST CHANGELOG","@info",
+"<b>SOSP INFORMATIONS</b>","SHOWS ACTUAL DEVICE INFORMATIONS","@info",
+"<b>SOSP FILEMANAGER</b>","STARTS A ADVANCED FILE MANAGER","@welcome"
 );
-#
+###################
 if prop("welcome.prop","selected")=="2" then
 textbox(
 "<u>CHANGELOG</u>",
@@ -60,7 +70,7 @@ resread("changelog.txt")
 );
 back("2");
 endif;
-#
+###################
 if prop("welcome.prop","selected")=="3" then
 textbox(
 "<u>INSTRCUTIONS</u>",
@@ -70,7 +80,7 @@ resread("instrcutions.txt")
 );
 back("2");
 endif;
-#
+###################
 if prop("welcome.prop","selected")=="4" then
 pleasewait("COLLECTING INFOS...");
 setvar(
@@ -88,14 +98,7 @@ setvar(
 "SD CARD SIZE:\t\t   <b>"+getdisksize("/external_sd","m")+"MB</b>\n"+
 "SD CARD FREE:\t\t   <b>"+getdiskfree("/external_sd","m")+"MB</b>"
 );
-#
-if prop("welcome.prop","selected")=="5" then
-restotmp("aromafm.cfg","aromafm.cfg");
-resexec("aromafm.sh");
-resexec("aromafm","1","0",prop("aromafm.prop","ziplocation"));
-back("1");
-endif;
-#
+###################
 textbox(
 "<u>INFOS</u>",
 "WELCOME TO THE DEVICE INFORMATIONS",
@@ -104,117 +107,152 @@ getvar("INFOS")
 );
 back("2");
 endif;
-#
+###################
+if prop("welcome.prop","selected")=="5" then
+restotmp("aromafm.cfg","aromafm.cfg");
+resexec("aromafm.sh");
+resexec("aromafm","1","0",prop("aromafm.prop","ziplocation"));
+back("1");
+endif;
+###################
 ini_set("text_next","START");
-#
+###################
 viewbox(
-"WELCOME THE INSTALLER",
+"WELCOME THE MAIN PATCH",
 "THE NEXT PAGES WILL CONTAIN ALL PATCH OPTIONS.\n\n"+
 "MAKE YOUR CHOICES BASED ON THE GIVEN SETUP AND YOUR PREFERENCES.\n\n"+
 "THE CONFIGURATION WILL BEGIN AFTER PRESSING <b>'START'</b>. DONT FORGET TO READ THE INSTRUCTIONS BEFORE!",
 "@welcome"
 );
-#
+###################
 ini_set("text_next","NEXT");
-#
+###################
 selectbox(
 "<u>BOOT</u>",
 "MAKE YOUR CHOICE AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
 "@none",
 "boot.prop",
-#
+###################
 "<u>WHICH BOOTANIMATION DO YOU WANT TO USE?</u>","",2,
 "<b>BLACK/OEM</b>","DISABLES THE BOOTANIMATION / FASTES BOOT",0,
 "<b>ANDROID</b>","USING THE BASIC ANDROID LOGO / FASTER BOOT",0,
 "<b>GOOGLE PIXEL</b>","USING THE GOOGLE BOOTANIMATION",1,
 "<b>SYSTEM DEFAULT</b>","USING THE DEFAULT BOOTANIMATION",0
 );
-#
+###################
 selectbox(
 "<u>PATCH</u>",
 "MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
 "@none",
 "patch.prop",
-#
+###################
 "<u>WHICH PROP FILE DO YOU WANT TO INJECT?</u>","",2,
-"<b>SOSP PROP</b>","INJECTS THE ORIGINAL SOSP PROP FILE",1,
+"<b>SNAP PROP</b>","INJECTS THE ORIGINAL SNAP PROP FILE",1,
 "<b>CUSTOM PROP</b>","INJECTS A OWN/SHARED PROP FILE FROM YOUR STORAGE",0,
 "<u>WHERE ARE YOUR MICROPHONES PLACED?</u>","",2,
 "<b>TOP AND BOTTOM</b>","ENABLES THE ENDFIRE CONFIG",1,
 "<b>FRONT AND BACK</b>","ENABLES THE BROADSIDE CONFIG",0
 );
-#
-selectbox(
-"<u>DEVICE</u>",
-"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
-"@none",
-"device.prop",
-#
-"<u>WHICH DEVICE CONFIG DO YOU WANT TO USE?</u>","",2,
-"<b>PIXEL 2 XL</b>","TRANSFORMS YOUR DEVICE INTO A PIXEL 2 XL",1,
-"<b>SYSTEM DEFAULT</b>","KEEPS YOUR DEVICE ORIGINAL AS POSSIBLE",0
-);
-#
+###################
 selectbox(
 "<u>ROOT</u>",
 "MAKE YOUR CHOICE AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
 "@none",
 "root.prop",
-#
+###################
 "<u>WHICH ROOT SOLUTION DO YOU WANT TO USE?</u>","",2,
+"<b>LINEAGE OS 14.1 SU</b>","USING THE LATEST ARM64 SU ROOT",0,
+"<b>SUPERSU STABLE</b>","USING THE LATEST STABLE SUPERSU ROOT",0,
+"<b>SUPERSU SYSTEM</b>","USING THE SYSTEM BASED SUPERSU ROOT",0,
 "<b>MAGISK STABLE</b>","USING THE LATEST STABLE MAGISK ROOT",0,
 "<b>MAGISK BETA</b>","USING THE LATEST BETA MAGISK ROOT",0,
-"<b>NO ROOTING</b>","NO ROOTING AND REMOVING OF IT",0,
-"<b>SKIP</b>","NO ADDITONAL ROOTING FROM THE PATCH",1
+"<b>NO ROOT</b>","NO ROOTING AND REMOVING OF IT",1
 );
-#
+###################
+selectbox(
+"<u>TRANSFORMATION</u>",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"transformation.prop",
+###################
+"<u>WHICH DEVICE INFOS DO YOU WANT TO USE?</u>","",2,
+"<b>GOOGLE PIXEL 2 XL</b>","USING THE PIXEL 2 XL INFOS",1,
+"<b>GOOGLE PIXEL C</b>","USING THE PIXEL C INFOS",0,
+"<b>LG V30</b>","USING THE V30 INFOS",0,
+"<b>SONY XPERIA XZ PREMIUM</b>","USING THE XPERIA XZ PREMIUM INFOS",0,
+"<b>HTC U 11</b>","USING THE U 11 INFOS",0,
+"<b>SAMSUNG GALAXY S9+ !PLACEHOLDER!+</b>","USING THE GALAXY S8+ INFOS",0,
+"<b>ONEPLUS 5S !PLACEHOLDER!</b>","ONEPLUS 5S INFOS",0,
+"<b>SYSTEM DEFAULT</b>","USING THE ORIGINAL SYSTEM INFOS",0
+);
+###################
 selectbox(
 "<u>SOUNDS</u>",
 "MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
 "@none",
 "sounds.prop",
-#
+###################
 "<u>WHICH UI SOUND PACK DO YOU WANT TO USE?</u>","",2,
 "<b>GOOGLE PIXEL 2 XL</b>","USING THE PIXEL 2 XL SOUNDS",1,
-"<b>LG V40</b>","USING THE LG V40 SOUNDS",0,
-"<b>SONY XPERIA XZ PREMIUM</b>","USING THE XPERIA XZ2 PREMIUM SOUNDS",0,
-"<b>HTC U 12</b>","USING THE U 12 SOUNDS",0,
-"<b>SAMSUNG GALAXY S9+ </b>","USING THE GALAXY S9+ SOUNDS",0,
-"<b>ONEPLUS 6 </b>","ONEPLUS 6 SOUNDS",0,
-"<b>SKIP</b>","USING THE ORIGINAL SYSTEM SOUNDS",0,
+"<b>LG V30</b>","USING THE LG V30 SOUNDS",0,
+"<b>SONY XPERIA XZ PREMIUM</b>","USING THE XPERIA XZ PREMIUM SOUNDS",0,
+"<b>HTC U 11</b>","USING THE U 11 SOUNDS",0,
+"<b>SAMSUNG GALAXY S9+ !PLACEHOLDER!</b>","USING THE GALAXY S8+ SOUNDS",0,
+"<b>ONEPLUS 5S !PLACEHOLDER!</b>","ONEPLUS 5S SOUNDS",0,
+"<b>SYSTEM DEFAULT</b>","USING THE ORIGINAL SYSTEM SOUNDS",0,
 "<u>WHICH RINGTONE/ALARM/NOTIFICATION SOUND PACK?</u>","",2,
 "<b>GOOGLE PIXEL 2 XL</b>","USING THE PIXEL 2 XL SOUNDS",0,
-"<b>LG V40</b>","USING THE LG V40 SOUNDS",0,
-"<b>SONY XPERIA XZ2 PREMIUM</b>","USING THE XPERIA XZ2 PREMIUM SOUNDS",0,
-"<b>HTC U 12</b>","USING THE U 12 SOUNDS",0,
-"<b>SAMSUNG GALAXY S9+</b> ","USING THE GALAXY S9+ SOUNDS",0,
-"<b>ONEPLUS 6</b>","ONEPLUS 6 SOUNDS",0,
-"<b>ALL OF THEM</b>","ADDING ALL RINGTONE/ALARM/NOTIFICATION SOUND PACKS",1,
-"<b>SKIP</b>","NO ADDITONAL SOUNDS",1
+"<b>LG V30</b>","USING THE LG V30 SOUNDS",0,
+"<b>SONY XPERIA XZ PREMIUM</b>","USING THE XPERIA XZ PREMIUM SOUNDS",0,
+"<b>HTC U 11</b>","USING THE U 11 SOUNDS",0,
+"<b>SAMSUNG GALAXY S8+</b> !PLACEHOLDER!","USING THE GALAXY S8+ SOUNDS",0,
+"<b>ONEPLUS 5S !PLACEHOLDER!</b>","ONEPLUS 5S SOUNDS",0,
+"<b>ALL</b>","ADDING ALL RINGTONE/ALARM/NOTIFICATION SOUND PACKS",1
 );
+###################
 selectbox(
-"<u>SOSP</u>",
+"<u>INTERFACE</u>",
 "MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
 "@none",
-"sosp.prop",
-#
-"<u>SOSP SYSTEM</u>","",2,
-"<b>ENABLED</b>","ADDS A SMALL SET OF GAPPS AFTER A MASSIVE SYSTEM CLEANING",1,
+"interface.prop",
+###################
+"<u>WHICH DEVICE UI DO YOU WANT TO USE?</u>","",2,
+"<b>TABLET</b>","DEVICE CHARACTERISTICS WILL BE SET TO 'TABLET'",0,
+"<b>TV</b>","DEVICE CHARACTERISTICS WILL BE SET TO 'TV'",0,
+"<b>WATCH</b>","DEVICE CHARACTERISTICS WILL BE SET TO 'WATCH'",0,
+"<b>PHONE</b>","DEVICE CHARACTERISTICS WILL BE SET TO 'PHONE'",0,
+"<b>SYSTEM DEFAULT</b>","DEVICE CHARACTERISTICS WILL STAY UNTOUCHED",1,
+"<u>WHICH DPI DO YOU WANT TO USE?</u>","",2,
+"<b>TV</b>","DPI WILL BE SET TO 320",0,
+"<b>TABLET</b>","DPI WILL BE SET TO 480",0,
+"<b>PHABLET</b>","DPI WILL BE SET TO 560",0,
+"<b>PHONE</b>","DPI WILL BE SET TO 640",0,
+"<b>SYSTEM DEFAULT</b>","DPI WILL STAY UNTOUCHED",1
+);
+###################
+selectbox(
+"<u>SYSTEM</u>",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"system.prop",
+###################
+"<u>SNAP SYSTEM</u>","",2,
+"<b>ENABLED</b>","ADDS OPTIMIZED GAPPS AFTER MASSIVE CLEANING",1,
 "<b>DISABLED</b>","CUSTOM CLEANING / OPTIONAL GAPPS ON A EXTRA PAGE",0,
-"<u>SOSP KERNEL</u>","",2,
-"<b>ENABLED</b>","ADDS A INITD KERNEL OPTIMIZER SCRIPT",1,
-"<b>DISABLED</b>","NO KERNEL ADDITONAL KERNEL OPTIMIZING",0,
-"<u>SOSP AUDIO</u>","",2,
-"<b>ENABLED</b>","ADDS ADVANCED SOSP AUDIO SYSTEM ADDITIONS",1,
+"<u>SNAP KERNEL</u>","",2,
+"<b>ENABLED</b>","ADDS THE HELLSGATE AXON 7 KERNEL",1,
+"<b>DISABLED</b>","NO KERNEL CHANGING / DEFAULT KERNEL",0,
+"<u>SNAP AUDIO</u>","",2,
+"<b>ENABLED</b>","ADDS ADVANCED SNAP AUDIO SYSTEM ADDITIONS",1,
 "<b>DISABLED</b>","NO EXTRA OPTIMIZATION OF THE AUDIO QUALITY",0,
-"<u>SOSP EMOJIS</u>","",2,
-"<b>ENABLED</b>","ADDS EMOJIONE 3.2 EMOJI REPLACEMENT",1,
+"<u>SNAP EMOJIS</u>","",2,
+"<b>ENABLED</b>","ADDS EMOJIONE 3.1 EMOJI REPLACEMENT",1,
 "<b>DISABLED</b>","USING THE DEFAULT SYSTEM EMOJIS",0,
-"<u>SOSP FONT</u>","",2,
+"<u>SNAP FONT</u>","",2,
 "<b>ENABLED</b>","ADDS UBUNTU REGULAR AS REPLACEMENT FONT",1,
 "<b>DISABLED</b>","USING THE DEFAULT SYSTEM FONT",0
 );
-#
+###################
 if (prop("system.prop","selected.1")=="1") then
 writetmpfile("debloating.prop",
 "item.1.1=0\n"+
@@ -239,17 +277,17 @@ writetmpfile("debloating.prop",
 "item.20.1=0\n"+
 "item.21.1=0\n"
 );
-#
+###################
 endif;
-#
+###################
 if (prop("system.prop","selected.1")=="2") then
-alert("SOSP SYSTEM DISABLED","USE OPEN GAPPS AROMA AFTER THE PATCHING FOR FULL FREEDOM", "@none");
+alert("SNAP SYSTEM DISABLED","USE OPEN GAPPS AROMA AFTER THE PATCHING FOR FULL FREEDOM", "@none");
 checkbox(
 "DE/BLOATING",
 "MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
 "icons/none",
 "debloating.prop",
-#
+###################
 "<b>HOME LAUNCHERS:</b>","",2,
 "REMOVING","REMOVES ALL SYSTEM LAUNCHER APPS",0,
 "<b>GALARIES:</b>","",2,
@@ -290,28 +328,28 @@ checkbox(
 "REMOVING","REMOVES ALL SYSTEM LIVEWALLPAPER APPS",0,
 "<b>OEM EXTRA APPS:</b>","",2,
 "REMOVING","REMOVES ALL EXTRA SYSTEM APPS",0,
-"<b>OPTIMIZED SOSP GAPPS:</b>","",2,
+"<b>OPTIMIZED SNAP GAPPS:</b>","",2,
 "ENABLED","ADDING A SMALL OPTIMIZED SET OF GAPPS",1
 );
-#
+###################
 endif;
-#
+###################
 selectbox(
 "<u>ADDITIONS</u>",
 "MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
 "@none",
 "additions.prop",
-#
-"<u>SOSP ASSIST PACK</u>","",2,
+###################
+"<u>SNAP ASSIST PACK</u>","",2,
 "<b>SONY</b>","ADDS ADDITONAL SERVICES FROM SONY",0,
-"<b>HTC</b>","ADDS ADDITONAL SERVICES FROM HTC",0,
+"<b>HTC</b>","ADDS ADDITONAL SERVICES FROM SONY",0,
 "<b>OFF</b>","NO EXTRA SERVICES WILL BE ADDED",1,
-"<u>SOSP APP COLLECTION</u>","",2,
+"<u>SNAP APP COLLECTION</u>","",2,
 "<b>ENABLED</b>","ADDING THE FULL COLLECTION",0,
-"<b>DISABLED</b>","ADDING NO APPS FROM THE COLLECTION",0,
+"<b>DISABLED</b>","ADDING NO APPS AND SKIPING THIS",0,
 "<b>CUSTOM</b>","ALLOWS APP SELECTING ON THE NEXT PAGE",1
 );
-#
+###################
 if (prop("additions.prop","selected.2")=="1") then
 writetmpfile("apps.prop",
 "item.1.1=1\n"+
@@ -321,9 +359,9 @@ writetmpfile("apps.prop",
 "item.1.5=1\n"+
 "item.1.6=1\n"
 );
-#
+###################
 endif;
-#
+###################
 if (prop("additions.prop","selected.2")=="2") then
 writetmpfile("apps.prop",
 "item.1.1=0\n"+
@@ -333,16 +371,16 @@ writetmpfile("apps.prop",
 "item.1.5=0\n"+
 "item.1.6=1\n"
 );
-#
+###################
 endif;
-#
+###################
 if (prop("additions.prop","selected.2")=="3") then
 checkbox(
 "APPS",
 "MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
 "icons/none",
 "apps.prop",
-#
+###################
 "<b>CHECK THE BOXES TO INCLUDE APPS:</b>","",2,
 "NEUTRALIZER","SMART AND EASY TO USE EQUALIZER REPLACEMENT",0,
 "MORE SHORTCUTS","ACCESS ALL FUNCTIONS OF YOUR ANDROID OS",0,
@@ -351,79 +389,79 @@ checkbox(
 "KERNEL ADIUTOR MOD","RECENTLY UPDATED MOD VERSION OF THE KA",0,
 "ROOTLESS PIXEL LAUNCHER","PIXEL 2 LIKE HOME LAUNCHER APP",0
 );
-#
+###################
 endif;
-#
-ini_set("text_next","START");
-#
+###################
+ini_set("text_next","PATCHING");
+###################
 textbox(
-"<u>CONFIGURED</u>",
-"THIS IS YOUR LAST CHANCE TO GO BACK OR TO LEAVE THE SOSP...",
+"<u>READY</u>",
+"THIS IS YOUR LAST CHANCE TO GO BACK OR TO LEAVE THE SNAP PATCHING...",
 "@none",
-#
-"PLEASE MAKE SURE YOUR DEVICE ISN'T CHARGING OR CONNCETED VIA USB. "+
-"THE INSTALLATION WILL BEGIN AFTER PRESSING 'START'..."
+###################
+"ONCE YOU PRESS <b>'PATCHING'</b> IT WILL START TO PERFORM THE INSTALLATION! "+
+"MAKE SURE YOUR DEVICE ISN'T CHARGING TO PREVENT OVERHEATING AND FREEZING WHILE INSTALLING..."
 );
-#
-ini_set("text_next","FINISH");
-#
+###################
+ini_set("text_next","NEXT");
+###################
 install(
 "<u>PATCHING</u>\n",
-"FLASHING NOW THE SOSP BASED ON YOUR CHOICES. "+
+"FLASHING NOW THE SNAP PATCH BASED ON YOUR CHOICES. "+
 "IF YOU FACE A DISPLAY FREEZE, JUST WAIT A BIT AND PRESS THE BOTTOM RIGHT EDGE. 4 VIBRATIONS AND YOU ARE BACK IN TWRP!"+
-"THE SOSP AND YOUR CHOICES WILL BE INSTALLED JUST FINE, NO WORRIES...",
+"THE PATCH/TOOLS AND YOUR CHOICES WILL GET INSTALLED JUST FINE, NO WORRIES...",
 "@none",
-#
+###################
 "<u>PATCHED</u> "+
-"PRESS 'FINISH' TO COMPLETE THE PROCESS..."
+"PRESS 'NEXT' TO COMPLETE THE PROCESS..."
 );
-#
+###################
 ini_set("text_next","OK");
-#
+###################
 checkviewbox(
 "<u>COMPLETED</u>",
-"YOU SHOULD NOW START CHARGING YOUR DEVICE UP TO 100%...",
+"GO BACK TO THE MAIN MENU OR CONTINUE BY PRESSING <b>'OK'</b>",
 "@none",
-#
+###################
 gotolabel("EXIT");
-#
+###################
 "SELECT TO GO BACK TO THE MAIN MENU","0","MENU"
 );
-#
+###################
 if
 getvar("MENU")=="1"
 then
 goto("MENU");
 endif;
-#
+###################
 checkviewbox(
 "<u>COMPLETED</u>",
 "REBOOT TO THE SYSTEM OR CONTINUE BY PRESSING <b>'OK'</b>",
 "@none",
-#
+###################
 "SELECT TO REBOOT TO THE SYSTEM","0","REBOOT1"
 );
-#
+###################
 if
 getvar("REBOOT1")=="1"
 then
 reboot("onfinish");
 endif;
-#
+###################
 checkviewbox(
 "<u>COMPLETED</u>",
 "REBOOT TO THE RECOVERY OR LEAVE THE PATCH BY PRESSING <b>'OK'</b>",
 "@none",
-#
+###################
 "SELECT TO REBOOT TO THE RECOVERY","0","REBOOT2"
 );
-#
+###################
 if
 getvar("REBOOT2")=="1"
 then
 reboot("onfinish","recovery");
 endif;
-#
+###################
 anisplash(
 1,
 "themes/sosp/1",1,
