@@ -1,5 +1,4 @@
-﻿
-theme("blacknwhite");
+﻿theme("sosp");
 fontresload("0","ttf/android.ttf","12");
 fontresload("1","ttf/android.ttf","12");
 ini_set("dp","6");
@@ -8,13 +7,8 @@ ini_set("transition","stack");
 ini_set("rom_name","SOSP");
 ini_set("rom_author","MIUSTONE");
 ini_set("rom_device","SNAPDRAGON");
-<<<<<<< HEAD
 ini_set("rom_version","NIGHTLY");
 ini_set("rom_date","XX.XX.XX");
-=======
-ini_set("rom_version","xx.xx.xx");
-ini_set("rom_date","xx.xx.xx");
->>>>>>> fcd2f8dd6c6898ffa7c96f36373a4976e69d3beb
 ini_set("icon_next","@next");
 ini_set("icon_back","@back");
 ini_set("text_back","BACK");
@@ -24,33 +18,28 @@ ini_set("text_ok","OK");
 ini_set("text_yes","YES");
 ini_set("text_quit","EXIT");
 ini_set("text_about","INFO");
-<<<<<<< HEAD
 ini_set("text_quit_msg","DO YOU REALLY WANT TO LEAVE THE SOSP UTILITY ?");
 ###################
-=======
-ini_set("text_quit_msg","DO YOU REALLY WANT TO LEAVE THE SOSP UTILITY?");
-#
->>>>>>> fcd2f8dd6c6898ffa7c96f36373a4976e69d3beb
 anisplash(
 3,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1,
+"themes/sosp/2",1,
+"themes/sosp/1",1
 );
 ###################
 gotolabel("MENU");
 ###################
 menubox(
 "<u>WELCOME</u>",
-"SELECT A OPTION TO START OR PRESS THE 3 DOTS",
+"SELECT A OPTION TO START OR PRESS THE 3 DOT MENU FOR MORE...",
 "@none",
 "welcome.prop",
 ###################
@@ -147,7 +136,7 @@ selectbox(
 "patch.prop",
 ###################
 "<u>WHICH PROP FILE DO YOU WANT TO INJECT?</u>","",2,
-"<b>SNAP PROP</b>","INJECTS THE ORIGINAL SNAP PROP FILE",1,
+"<b>SOSP PROP</b>","INJECTS THE ORIGINAL SOSP PROP FILE",1,
 "<b>CUSTOM PROP</b>","INJECTS A OWN/SHARED PROP FILE FROM YOUR STORAGE",0,
 "<u>WHERE ARE YOUR MICROPHONES PLACED?</u>","",2,
 "<b>TOP AND BOTTOM</b>","ENABLES THE ENDFIRE CONFIG",1,
@@ -161,12 +150,10 @@ selectbox(
 "root.prop",
 ###################
 "<u>WHICH ROOT SOLUTION DO YOU WANT TO USE?</u>","",2,
-"<b>LINEAGE OS 14.1 SU</b>","USING THE LATEST ARM64 SU ROOT",0,
-"<b>SUPERSU STABLE</b>","USING THE LATEST STABLE SUPERSU ROOT",0,
-"<b>SUPERSU SYSTEM</b>","USING THE SYSTEM BASED SUPERSU ROOT",0,
 "<b>MAGISK STABLE</b>","USING THE LATEST STABLE MAGISK ROOT",0,
 "<b>MAGISK BETA</b>","USING THE LATEST BETA MAGISK ROOT",0,
-"<b>NO ROOT</b>","NO ROOTING AND REMOVING OF IT",1
+"<b>NO ROOTING</b>","NO ROOTING AND REMOVING OF IT",0,
+"<b>SYSTEM DEFAULT</b>","NO ROOTING FROM THE PATCH",1
 );
 ###################
 selectbox(
@@ -178,11 +165,11 @@ selectbox(
 "<u>WHICH DEVICE INFOS DO YOU WANT TO USE?</u>","",2,
 "<b>GOOGLE PIXEL 2 XL</b>","USING THE PIXEL 2 XL INFOS",1,
 "<b>GOOGLE PIXEL C</b>","USING THE PIXEL C INFOS",0,
-"<b>LG V30</b>","USING THE V30 INFOS",0,
-"<b>SONY XPERIA XZ PREMIUM</b>","USING THE XPERIA XZ PREMIUM INFOS",0,
-"<b>HTC U 11</b>","USING THE U 11 INFOS",0,
-"<b>SAMSUNG GALAXY S9+ !PLACEHOLDER!+</b>","USING THE GALAXY S8+ INFOS",0,
-"<b>ONEPLUS 5S !PLACEHOLDER!</b>","ONEPLUS 5S INFOS",0,
+"<b>LG V40</b>","USING THE V40 INFOS",0,
+"<b>SONY XPERIA XZ2 PREMIUM</b>","USING THE XPERIA XZ2 PREMIUM INFOS",0,
+"<b>HTC U 12</b>","USING THE U 12 INFOS",0,
+"<b>SAMSUNG GALAXY S9+ +</b>","USING THE GALAXY S9+ INFOS",0,
+"<b>ONEPLUS 6 </b>","ONEPLUS 6 INFOS",0,
 "<b>SYSTEM DEFAULT</b>","USING THE ORIGINAL SYSTEM INFOS",0
 );
 ###################
@@ -194,20 +181,21 @@ selectbox(
 ###################
 "<u>WHICH UI SOUND PACK DO YOU WANT TO USE?</u>","",2,
 "<b>GOOGLE PIXEL 2 XL</b>","USING THE PIXEL 2 XL SOUNDS",1,
-"<b>LG V30</b>","USING THE LG V30 SOUNDS",0,
-"<b>SONY XPERIA XZ PREMIUM</b>","USING THE XPERIA XZ PREMIUM SOUNDS",0,
-"<b>HTC U 11</b>","USING THE U 11 SOUNDS",0,
-"<b>SAMSUNG GALAXY S9+ !PLACEHOLDER!</b>","USING THE GALAXY S8+ SOUNDS",0,
-"<b>ONEPLUS 5S !PLACEHOLDER!</b>","ONEPLUS 5S SOUNDS",0,
+"<b>LG V40</b>","USING THE LG V40 SOUNDS",0,
+"<b>SONY XPERIA XZ2 PREMIUM</b>","USING THE XPERIA XZ2 PREMIUM SOUNDS",0,
+"<b>HTC U 12</b>","USING THE U 12 SOUNDS",0,
+"<b>SAMSUNG GALAXY S9+ </b>","USING THE GALAXY S9+ SOUNDS",0,
+"<b>ONEPLUS 6 </b>","ONEPLUS 6 SOUNDS",0,
 "<b>SYSTEM DEFAULT</b>","USING THE ORIGINAL SYSTEM SOUNDS",0,
 "<u>WHICH RINGTONE/ALARM/NOTIFICATION SOUND PACK?</u>","",2,
 "<b>GOOGLE PIXEL 2 XL</b>","USING THE PIXEL 2 XL SOUNDS",0,
-"<b>LG V30</b>","USING THE LG V30 SOUNDS",0,
-"<b>SONY XPERIA XZ PREMIUM</b>","USING THE XPERIA XZ PREMIUM SOUNDS",0,
-"<b>HTC U 11</b>","USING THE U 11 SOUNDS",0,
-"<b>SAMSUNG GALAXY S8+</b> !PLACEHOLDER!","USING THE GALAXY S8+ SOUNDS",0,
-"<b>ONEPLUS 5S !PLACEHOLDER!</b>","ONEPLUS 5S SOUNDS",0,
-"<b>ALL</b>","ADDING ALL RINGTONE/ALARM/NOTIFICATION SOUND PACKS",1
+"<b>LG V40</b>","USING THE LG V40 SOUNDS",0,
+"<b>SONY XPERIA XZ2 PREMIUM</b>","USING THE XPERIA XZ2 PREMIUM SOUNDS",0,
+"<b>HTC U 12</b>","USING THE U 12 SOUNDS",0,
+"<b>SAMSUNG GALAXY S9+</b> ","USING THE GALAXY S9+ SOUNDS",0,
+"<b>ONEPLUS 6 </b>","ONEPLUS 6 SOUNDS",0,
+"<b>ALL SOUNDS</b>","ADDING ALL RINGTONE/ALARM/NOTIFICATION PACKS",1,
+"<b>SYSTEM DEFAULT</b>","NO EXTRA RINGTONE/ALARM/NOTIFICATION PACKS",0
 );
 ###################
 selectbox(
@@ -236,19 +224,19 @@ selectbox(
 "@none",
 "system.prop",
 ###################
-"<u>SNAP SYSTEM</u>","",2,
+"<u>SOSP SYSTEM</u>","",2,
 "<b>ENABLED</b>","ADDS OPTIMIZED GAPPS AFTER MASSIVE CLEANING",1,
 "<b>DISABLED</b>","CUSTOM CLEANING / OPTIONAL GAPPS ON A EXTRA PAGE",0,
-"<u>SNAP KERNEL</u>","",2,
+"<u>SOSP KERNEL</u>","",2,
 "<b>ENABLED</b>","ADDS THE HELLSGATE AXON 7 KERNEL",1,
 "<b>DISABLED</b>","NO KERNEL CHANGING / DEFAULT KERNEL",0,
-"<u>SNAP AUDIO</u>","",2,
-"<b>ENABLED</b>","ADDS ADVANCED SNAP AUDIO SYSTEM ADDITIONS",1,
+"<u>SOSP AUDIO</u>","",2,
+"<b>ENABLED</b>","ADDS ADVANCED SOSP AUDIO SYSTEM ADDITIONS",1,
 "<b>DISABLED</b>","NO EXTRA OPTIMIZATION OF THE AUDIO QUALITY",0,
-"<u>SNAP EMOJIS</u>","",2,
+"<u>SOSP EMOJIS</u>","",2,
 "<b>ENABLED</b>","ADDS EMOJIONE 3.1 EMOJI REPLACEMENT",1,
 "<b>DISABLED</b>","USING THE DEFAULT SYSTEM EMOJIS",0,
-"<u>SNAP FONT</u>","",2,
+"<u>SOSP FONT</u>","",2,
 "<b>ENABLED</b>","ADDS UBUNTU REGULAR AS REPLACEMENT FONT",1,
 "<b>DISABLED</b>","USING THE DEFAULT SYSTEM FONT",0
 );
@@ -281,7 +269,7 @@ writetmpfile("debloating.prop",
 endif;
 ###################
 if (prop("system.prop","selected.1")=="2") then
-alert("SNAP SYSTEM DISABLED","USE OPEN GAPPS AROMA AFTER THE PATCHING FOR FULL FREEDOM", "@none");
+alert("SOSP SYSTEM DISABLED","USE OPEN GAPPS AROMA AFTER THE PATCHING FOR FULL FREEDOM", "@none");
 checkbox(
 "DE/BLOATING",
 "MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
@@ -328,7 +316,7 @@ checkbox(
 "REMOVING","REMOVES ALL SYSTEM LIVEWALLPAPER APPS",0,
 "<b>OEM EXTRA APPS:</b>","",2,
 "REMOVING","REMOVES ALL EXTRA SYSTEM APPS",0,
-"<b>OPTIMIZED SNAP GAPPS:</b>","",2,
+"<b>OPTIMIZED SOSP GAPPS:</b>","",2,
 "ENABLED","ADDING A SMALL OPTIMIZED SET OF GAPPS",1
 );
 ###################
@@ -340,11 +328,11 @@ selectbox(
 "@none",
 "additions.prop",
 ###################
-"<u>SNAP ASSIST PACK</u>","",2,
+"<u>SOSP ASSIST PACK</u>","",2,
 "<b>SONY</b>","ADDS ADDITONAL SERVICES FROM SONY",0,
 "<b>HTC</b>","ADDS ADDITONAL SERVICES FROM SONY",0,
 "<b>OFF</b>","NO EXTRA SERVICES WILL BE ADDED",1,
-"<u>SNAP APP COLLECTION</u>","",2,
+"<u>SOSP APP COLLECTION</u>","",2,
 "<b>ENABLED</b>","ADDING THE FULL COLLECTION",0,
 "<b>DISABLED</b>","ADDING NO APPS AND SKIPING THIS",0,
 "<b>CUSTOM</b>","ALLOWS APP SELECTING ON THE NEXT PAGE",1
@@ -396,7 +384,7 @@ ini_set("text_next","PATCHING");
 ###################
 textbox(
 "<u>READY</u>",
-"THIS IS YOUR LAST CHANCE TO GO BACK OR TO LEAVE THE SNAP PATCHING...",
+"THIS IS YOUR LAST CHANCE TO GO BACK OR TO LEAVE THE SOSP PATCHING...",
 "@none",
 ###################
 "ONCE YOU PRESS <b>'PATCHING'</b> IT WILL START TO PERFORM THE INSTALLATION! "+
@@ -407,7 +395,7 @@ ini_set("text_next","NEXT");
 ###################
 install(
 "<u>PATCHING</u>\n",
-"FLASHING NOW THE SNAP PATCH BASED ON YOUR CHOICES. "+
+"FLASHING NOW THE SOSP PATCH BASED ON YOUR CHOICES. "+
 "IF YOU FACE A DISPLAY FREEZE, JUST WAIT A BIT AND PRESS THE BOTTOM RIGHT EDGE. 4 VIBRATIONS AND YOU ARE BACK IN TWRP!"+
 "THE PATCH/TOOLS AND YOUR CHOICES WILL GET INSTALLED JUST FINE, NO WORRIES...",
 "@none",
