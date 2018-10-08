@@ -9,13 +9,13 @@ if file_getprop("/tmp/aroma-data/patch.prop","selected.1")=="1" then
 ui_print("-SOSP PROP");
 package_extract_dir("META-INF/com/google/android/aroma/sosp/patch/prop","/tmp");
 package_extract_dir("META-INF/com/google/android/aroma/sosp/patch/patch","/tmp/patch");
-set_progress(0.1);
+set_progress(0.01);
 endif;
 #
 if file_getprop("/tmp/aroma-data/patch.prop","selected.1")=="2" then
 ui_print("-CUSTOM PROP");
 package_extract_dir("META-INF/com/google/android/aroma/sosp/patch/patch","/tmp/patch");
-set_progress(0.1);
+set_progress(0.01);
 endif;
 #
 ui_print("PREPARING DEVICE");
@@ -65,10 +65,10 @@ set_progress(0.06);
 endif;
 #
 ui_print("EXTRACTING BASICS");
-set_progress(0.7);
+set_progress(0.07);
 #
 package_extract_dir("META-INF/com/google/android/aroma/sosp/system","/system");
-set_progress(0.8);
+set_progress(0.08);
 #
 ui_print("MIC CONFIG");
 set_progress(0.09);
